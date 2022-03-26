@@ -21,6 +21,7 @@ class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
     // Implement the NDEF reader delegate protocol.
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        print("error " + error.localizedDescription);
         // Error handling
     }
     

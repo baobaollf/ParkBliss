@@ -12,6 +12,8 @@ struct ParkBlissApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .navigationBarTitle("ParkBliss");
         }
+        
     }
 }
