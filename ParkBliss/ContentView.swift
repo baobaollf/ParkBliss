@@ -12,15 +12,13 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 ParkButton();
-//                Text("Google, world!")
-//                    .padding();
                 HStack {
                     Button("History", action: {
-                        print("hi")
+                        print("history")
                     })
                     .buttonStyle(GrowingButton())
                     Button("Share", action: {
-                        print("hi again")
+                        print("share")
                     })
                     .buttonStyle(GrowingButton())
                 }
