@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var tagText = "";
     var body: some View {
+        
         NavigationView {
             VStack {
-                ParkButton();
+                ParkButton()
                 HStack {
                     Button("History", action: {
                         print("history")
@@ -26,9 +29,10 @@ struct ContentView: View {
             }
             .navigationTitle("ParkBliss")
             .navigationBarTitleDisplayMode(.inline)
+            
         }
     }
-
+    
 }
 
 

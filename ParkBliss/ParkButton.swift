@@ -15,13 +15,13 @@ extension UIApplication {
         guard let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController else {
             return nil
         }
-
+        
         var topController = rootViewController
-
+        
         while let newTopController = topController.presentedViewController {
             topController = newTopController
         }
-
+        
         return topController
     }
 }
@@ -30,7 +30,7 @@ class ErrorReporting {
     static func showMessage() {
         let alertController = UIAlertController(
             title: "Scanning Not Supported",
-            message: "This device doesn't support tag scanning.",
+            message: "This device doesn't support smart tag scanning. \n Use iPhone X or newer",
             preferredStyle: .alert
         );
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil));
@@ -40,6 +40,7 @@ class ErrorReporting {
 
 class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
     var session: NFCNDEFReaderSession?;
+    @Published var imageName = "";
     func scan() {
         guard NFCNDEFReaderSession.readingAvailable else {
             ErrorReporting.showMessage();
@@ -47,7 +48,7 @@ class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
         }
         
         // Create a reader session and pass self as delegate
-        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: false);
+        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true);
         session?.alertMessage = "Hold your iPhone near the smart tag to record your parking spot";
         session?.begin();
     }
@@ -62,25 +63,36 @@ class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         // Handle received messages
-        print(messages);
+        for payload in messages[0].records {
+            let str = String.init(data: payload.payload.advanced(by: 3), encoding: .utf8) ?? "";
+            print(str)
+            imageName = str;
+            // ContentView.str = str;
+        }
     }
 }
 
 struct ParkButton: View {
     @ObservedObject var reader = NFCReader();
-    
     var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.green)
-                .frame(width: 230, height: 230)
-                .onTapGesture {
-                    reader.scan();
-                    print("scanning");
-                }
+        VStack {
+            if (reader.imageName != "") {
+                ParkingSpot(imageName: reader.imageName)
+            }
+            ZStack {
+                
+                Circle()
+                    .fill(Color.green)
+                    .frame(width: 230, height: 230)
+                
+                    .onTapGesture {
+                        reader.scan();
+                        print("scanning");
+                    }
+                Text("Park")
+                    .font(.system(size: 30))
+            }
             
-            Text("Park")
-                .font(.system(size: 30))
         }
     }
 }

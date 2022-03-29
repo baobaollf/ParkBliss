@@ -13,6 +13,8 @@
 		3A8C018127E855060013B074 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8C018027E855060013B074 /* Preview Assets.xcassets */; };
 		3A8C018C27E85F0C0013B074 /* ParkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C018B27E85F0C0013B074 /* ParkButton.swift */; };
 		3A8C019027E86B260013B074 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C018F27E86B260013B074 /* ExternalAccessory.framework */; };
+		3AADFFBB27F2A0B800ABC105 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADFFBA27F2A0B800ABC105 /* ParkingSpot.swift */; };
+		3AADFFC027F2A46000ABC105 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AADFFBF27F2A46000ABC105 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3A8C018B27E85F0C0013B074 /* ParkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkButton.swift; sourceTree = "<group>"; };
 		3A8C018D27E86B260013B074 /* ParkBliss.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkBliss.entitlements; sourceTree = "<group>"; };
 		3A8C018F27E86B260013B074 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		3AADFFBA27F2A0B800ABC105 /* ParkingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParkingSpot.swift; path = ../ParkingSpot.swift; sourceTree = "<group>"; };
+		3AADFFBF27F2A46000ABC105 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 		3A8C016D27E855050013B074 = {
 			isa = PBXGroup;
 			children = (
+				3AADFFBC27F2A29500ABC105 /* assets */,
 				3A8C017827E855050013B074 /* ParkBliss */,
 				3A8C017727E855050013B074 /* Products */,
 				3A8C018E27E86B260013B074 /* Frameworks */,
@@ -58,6 +63,7 @@
 		3A8C017827E855050013B074 /* ParkBliss */ = {
 			isa = PBXGroup;
 			children = (
+				3AADFFBA27F2A0B800ABC105 /* ParkingSpot.swift */,
 				3A8C018D27E86B260013B074 /* ParkBliss.entitlements */,
 				3A8C017927E855050013B074 /* ParkBlissApp.swift */,
 				3A8C017B27E855050013B074 /* ContentView.swift */,
@@ -82,6 +88,14 @@
 				3A8C018F27E86B260013B074 /* ExternalAccessory.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AADFFBC27F2A29500ABC105 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				3AADFFBF27F2A46000ABC105 /* Images.xcassets */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AADFFC027F2A46000ABC105 /* Images.xcassets in Resources */,
 				3A8C018127E855060013B074 /* Preview Assets.xcassets in Resources */,
 				3A8C017E27E855060013B074 /* Assets.xcassets in Resources */,
 			);
@@ -156,6 +171,7 @@
 			files = (
 				3A8C018C27E85F0C0013B074 /* ParkButton.swift in Sources */,
 				3A8C017C27E855050013B074 /* ContentView.swift in Sources */,
+				3AADFFBB27F2A0B800ABC105 /* ParkingSpot.swift in Sources */,
 				3A8C017A27E855050013B074 /* ParkBlissApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
