@@ -15,6 +15,8 @@
 		3A8C019027E86B260013B074 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C018F27E86B260013B074 /* ExternalAccessory.framework */; };
 		3AADFFBB27F2A0B800ABC105 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADFFBA27F2A0B800ABC105 /* ParkingSpot.swift */; };
 		3AADFFC027F2A46000ABC105 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AADFFBF27F2A46000ABC105 /* Images.xcassets */; };
+		D611F92928086DF400B2B69E /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D611F92828086DF400B2B69E /* ShareView.swift */; };
+		D64905F02807A9D900C57806 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64905EF2807A9D800C57806 /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3A8C018F27E86B260013B074 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		3AADFFBA27F2A0B800ABC105 /* ParkingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParkingSpot.swift; path = ../ParkingSpot.swift; sourceTree = "<group>"; };
 		3AADFFBF27F2A46000ABC105 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D611F92828086DF400B2B69E /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		D64905EF2807A9D800C57806 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				3A8C017D27E855060013B074 /* Assets.xcassets */,
 				3A8C017F27E855060013B074 /* Preview Content */,
 				3A8C018B27E85F0C0013B074 /* ParkButton.swift */,
+				D64905EF2807A9D800C57806 /* HistoryView.swift */,
+				D611F92828086DF400B2B69E /* ShareView.swift */,
 			);
 			path = ParkBliss;
 			sourceTree = "<group>";
@@ -169,8 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D611F92928086DF400B2B69E /* ShareView.swift in Sources */,
 				3A8C018C27E85F0C0013B074 /* ParkButton.swift in Sources */,
 				3A8C017C27E855050013B074 /* ContentView.swift in Sources */,
+				D64905F02807A9D900C57806 /* HistoryView.swift in Sources */,
 				3AADFFBB27F2A0B800ABC105 /* ParkingSpot.swift in Sources */,
 				3A8C017A27E855050013B074 /* ParkBlissApp.swift in Sources */,
 			);
@@ -302,7 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ParkBliss/Preview Content\"";
-				DEVELOPMENT_TEAM = RAA5V8HRWA;
+				DEVELOPMENT_TEAM = 6XX3NCGFT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "using NFC to read parking info";
@@ -334,7 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ParkBliss/Preview Content\"";
-				DEVELOPMENT_TEAM = RAA5V8HRWA;
+				DEVELOPMENT_TEAM = 6XX3NCGFT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "using NFC to read parking info";

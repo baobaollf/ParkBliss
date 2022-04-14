@@ -16,14 +16,16 @@ struct ContentView: View {
             VStack {
                 ParkButton()
                 HStack {
-                    Button("History", action: {
-                        print("history")
-                    })
+                    NavigationLink(destination: HistoryView()) {
+                        Text("History")
+                    }
                     .buttonStyle(GrowingButton())
-                    Button("Share", action: {
-                        print("share")
-                    })
+                    
+                    NavigationLink(destination: ShareView()) {
+                        Text("Share")
+                    }
                     .buttonStyle(GrowingButton())
+        
                 }
                 .padding()
             }
