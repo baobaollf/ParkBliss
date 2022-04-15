@@ -11,16 +11,17 @@ struct ParkingSpot: View {
     var imageName: String;
     var body: some View {
         VStack{
+            Text("2nd Floor Row B #13")
+                .font(.largeTitle)
             Image(imageName)
                 .resizable()
                 .scaledToFit()
-            Text(imageName)
         }
     }
 }
 
 struct ParkingSpot_Previews: PreviewProvider {
     static var previews: some View {
-        ParkingSpot(imageName: "")
+        ParkingSpot(imageName: "spot1")
     }
 }

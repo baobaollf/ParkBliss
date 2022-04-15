@@ -46,7 +46,7 @@ class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
             ErrorReporting.showMessage();
             return
         }
-        
+        imageName = "";
         // Create a reader session and pass self as delegate
         session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true);
         session?.alertMessage = "Hold your iPhone near the smart tag to record your parking spot";
@@ -80,17 +80,30 @@ struct ParkButton: View {
                 ParkingSpot(imageName: reader.imageName)
             }
             ZStack {
+                if (reader.imageName != "") {
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 150, height: 150)
+                    
+                        .onTapGesture {
+                            reader.scan();
+                            print("scanning");
+                        }
+                    Text("Car Parked")
+                        .font(.system(size: 30))
+                } else {
+                    Circle()
+                        .fill(Color.green)
+                        .frame(width: 230, height: 230)
+                    
+                        .onTapGesture {
+                            reader.scan();
+                            print("scanning");
+                        }
+                    Text("Park")
+                        .font(.system(size: 30))
+                }
                 
-                Circle()
-                    .fill(Color.green)
-                    .frame(width: 230, height: 230)
-                
-                    .onTapGesture {
-                        reader.scan();
-                        print("scanning");
-                    }
-                Text("Park")
-                    .font(.system(size: 30))
             }
             
         }
