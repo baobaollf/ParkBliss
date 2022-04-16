@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
+
 struct ParkingSpot: View {
+
     var imageName: String;
     var body: some View {
         VStack{
@@ -16,9 +19,21 @@ struct ParkingSpot: View {
             Image(imageName)
                 .resizable()
                 .scaledToFit()
+            HStack{
+                NavigationLink(destination: ContentView()){
+                    Text("Home")
+                }.buttonStyle(GrowingButton())
+
+
+                NavigationLink(destination: ShareView()){
+                    Text("Share")
+                }.buttonStyle(GrowingButton())
+            }
         }
     }
 }
+
+
 
 struct ParkingSpot_Previews: PreviewProvider {
     static var previews: some View {
