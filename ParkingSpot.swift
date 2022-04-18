@@ -23,11 +23,13 @@ struct ParkingSpot: View {
                 NavigationLink(destination: ContentView()){
                     Text("Home")
                 }.buttonStyle(GrowingButton())
+                    .padding()
 
 
                 NavigationLink(destination: ShareView()){
                     Text("Share")
                 }.buttonStyle(GrowingButton())
+                    .padding()
             }
         }
     }
