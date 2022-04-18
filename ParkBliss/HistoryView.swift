@@ -13,7 +13,7 @@ struct HistoryView: View {
             NavigationLink(destination: ShareView()){
                 Text("4/16/22 9:35am Poetry Garage").padding()
             }.buttonStyle(GrowingButton())
-
+            
             Text("4/10/22 3:30pm UIC North Garage").buttonStyle(GrowingButton()).padding()
             Text("4/09/22 7:36am UIC North Garage").buttonStyle(GrowingButton()).padding()
             Text("4/08/22 7:30am UIC South Garage").buttonStyle(GrowingButton()).padding()

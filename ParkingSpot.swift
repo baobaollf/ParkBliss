@@ -15,6 +15,7 @@ struct ParkingSpot: View {
     var body: some View {
         VStack{
             Spacer()
+            Text("Poetry Garage").font(.largeTitle)
             Text("2nd Floor Row B #13")
                 .font(.largeTitle)
             Image(imageName)
