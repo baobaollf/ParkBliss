@@ -14,22 +14,25 @@ struct ContentView: View {
         
         NavigationView {
             VStack {
+                Spacer()
                 ParkButton()
+                Spacer()
                 HStack {
+
                     NavigationLink(destination: HistoryView()) {
-                        Text("History")
+                        Text("History").padding()
                     }
                     .buttonStyle(GrowingButton())
                     
                     NavigationLink(destination: ShareView()) {
-                        Text("Share")
+                        Text("Share").padding()
                     }
                     .buttonStyle(GrowingButton())
         
                 }
                 .padding()
             }
-            .navigationTitle("ParkBliss")
+            .navigationTitle("ParkBliss").font(.title)
             .navigationBarTitleDisplayMode(.inline)
             
         }

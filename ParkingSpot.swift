@@ -14,23 +14,26 @@ struct ParkingSpot: View {
     var imageName: String;
     var body: some View {
         VStack{
+            Spacer()
             Text("2nd Floor Row B #13")
                 .font(.largeTitle)
             Image(imageName)
                 .resizable()
                 .scaledToFit()
+            Spacer()
             HStack{
                 NavigationLink(destination: ContentView()){
-                    Text("Home")
+                    Text("Home").padding()
                 }.buttonStyle(GrowingButton())
-                    .padding()
+
 
 
                 NavigationLink(destination: ShareView()){
-                    Text("Share")
+                    Text("Share").padding()
                 }.buttonStyle(GrowingButton())
-                    .padding()
+
             }
+            Spacer()
         }
     }
 }

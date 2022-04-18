@@ -10,12 +10,21 @@ import SwiftUI
 struct HistoryView: View {
     var body: some View {
         VStack{
-            Text("16:00 @ Hyde Park").padding()
-            Text("12:00 @ UIC").padding()
-            Text("11:00 @ LOOP").padding()
-        
+            NavigationLink(destination: ShareView()){
+                Text("4/16/22 9:35am Poetry Garage").padding()
+            }.buttonStyle(GrowingButton())
+
+            Text("4/10/22 3:30pm UIC North Garage").buttonStyle(GrowingButton()).padding()
+            Text("4/09/22 7:36am UIC North Garage").buttonStyle(GrowingButton()).padding()
+            Text("4/08/22 7:30am UIC South Garage").buttonStyle(GrowingButton()).padding()
+            Text("4/06/22 7:31am UIC South Garage").buttonStyle(GrowingButton()).padding()
+            Text("4/01/22 8:31am Poetry Garage").buttonStyle(GrowingButton()).padding()
+            Text("3/28/22 9:08am Pier Park North Garage").buttonStyle(GrowingButton()).padding()
+            Text("3/17/22 7:35am Museum East Garage").buttonStyle(GrowingButton()).padding()
+        Spacer()
         }
         .navigationTitle("🚗 History 🚗")
+
     } 
 }
 
