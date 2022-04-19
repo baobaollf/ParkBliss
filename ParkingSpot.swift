@@ -36,6 +36,7 @@ struct ParkingSpot: View {
                     Text("Share").padding()
                     
                 }
+                .buttonStyle(GrowingButton())
                 
                 
             }
