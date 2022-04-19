@@ -10,7 +10,7 @@ import SwiftUI
 struct HistoryView: View {
     var body: some View {
         VStack{
-            NavigationLink(destination: ShareView()){
+            NavigationLink(destination: ParkingSpot(imageName: "spot1")){
                 Text("4/16/22 9:35am Poetry Garage").padding()
             }.buttonStyle(GrowingButton())
             
