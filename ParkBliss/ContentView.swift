@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var tagText = "";
     var body: some View {
         
         NavigationView {
@@ -17,20 +16,10 @@ struct ContentView: View {
                 Spacer()
                 ParkButton()
                 Spacer()
-                HStack {
-
-                    NavigationLink(destination: HistoryView()) {
-                        Text("History").padding()
-                    }
-                    .buttonStyle(GrowingButton())
-                    
-                    NavigationLink(destination: ShareView()) {
-                        Text("Share").padding()
-                    }
-                    .buttonStyle(GrowingButton())
-        
+                NavigationLink(destination: HistoryView()) {
+                    Text("History").padding()
                 }
-                .padding()
+                .buttonStyle(GrowingButton())
             }
             .navigationTitle("ParkBliss").font(.title)
             .navigationBarTitleDisplayMode(.inline)
@@ -39,7 +28,6 @@ struct ContentView: View {
     }
     
 }
-
 
 struct GrowingButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {

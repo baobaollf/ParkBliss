@@ -9,6 +9,21 @@ import SwiftUI
 import Foundation
 import CoreNFC
 
+struct Arc: Shape {
+    var clockwise: Bool
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.width / 2, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: clockwise)
+        
+        path.closeSubpath()
+        
+        return path
+    }
+}
+
+
 extension UIApplication {
     
     static func topMostController() -> UIViewController? {
@@ -41,12 +56,12 @@ class ErrorReporting {
 class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
     var session: NFCNDEFReaderSession?;
     @Published var imageName = "";
+    @Published var showPage = false;
     func scan() {
         guard NFCNDEFReaderSession.readingAvailable else {
             ErrorReporting.showMessage();
             return
         }
-        imageName = "";
         // Create a reader session and pass self as delegate
         session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true);
         session?.alertMessage = "Hold your iPhone near the smart tag to record your parking spot";
@@ -67,34 +82,64 @@ class NFCReader: NSObject, ObservableObject, NFCNDEFReaderSessionDelegate {
             let str = String.init(data: payload.payload.advanced(by: 3), encoding: .utf8) ?? "";
             print(str)
             imageName = str;
+            showPage = true;
             // ContentView.str = str;
         }
+        
     }
 }
 
 struct ParkButton: View {
-    @ObservedObject var reader = NFCReader();
+    @StateObject var reader = NFCReader();
+    
     var body: some View {
+        
         VStack {
             if (reader.imageName != "") {
-                ParkingSpot(imageName: reader.imageName)
+                NavigationLink("", destination: ParkingSpot(imageName: reader.imageName), isActive: $reader.showPage)
             }
-            ZStack {
-                if (reader.imageName != "") {
-                    Circle()
-                        .fill(Color.blue)
-                        .frame(width: 150, height: 150)
-                    
-                        .onTapGesture {
-                            reader.scan();
-                            print("scanning");
-                        }
-                    Text("Car Parked")
+            
+            
+            if (reader.imageName != "") {
+                ZStack {
+                    Button(action: {
+                        reader.scan();
+                    }) {
+                        Arc(clockwise: true)
+                            .fill(.green)
+                            .frame(width: 250, height: 250)
+                            .offset(y: 128)
+                            .onTapGesture {
+                                reader.scan();
+                                print("scanning");
+                            }
+                    }
+                    Text("Park")
                         .font(.system(size: 30))
-                } else {
+                        .offset(y: 90)
+                }
+                
+                
+                ZStack {
+                    NavigationLink(destination: ParkingSpot(imageName: reader.imageName)){
+                        ZStack{
+                            Arc(clockwise: false)
+                                .fill(.blue)
+                                .frame(width: 250, height: 250)
+                                .offset(y: -128)
+                            Text("Current Parking")
+                                .offset(y: -90)
+                                .font(.system(size: 30))
+                                .foregroundColor(Color.white)
+                        }
+                    }
+                }
+                
+            } else {
+                ZStack {
                     Circle()
                         .fill(Color.green)
-                        .frame(width: 230, height: 230)
+                        .frame(width: 300, height: 250)
                     
                         .onTapGesture {
                             reader.scan();
@@ -103,8 +148,8 @@ struct ParkButton: View {
                     Text("Park")
                         .font(.system(size: 30))
                 }
-                
             }
+            
             
         }
     }

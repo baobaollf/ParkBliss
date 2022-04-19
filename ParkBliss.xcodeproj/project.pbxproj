@@ -311,7 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ParkBliss/Preview Content\"";
-				DEVELOPMENT_TEAM = PPGZU459AR;
+				DEVELOPMENT_TEAM = RAA5V8HRWA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "using NFC to read parking info";
@@ -345,7 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ParkBliss/Preview Content\"";
-				DEVELOPMENT_TEAM = PPGZU459AR;
+				DEVELOPMENT_TEAM = RAA5V8HRWA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "using NFC to read parking info";
