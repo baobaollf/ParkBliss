@@ -31,14 +31,25 @@ struct ParkingSpot: View {
             Text("@ 4:41PM 4/10/2022 CST")
             Spacer()
             HStack{
-                NavigationLink(destination: ShareView()){
+                
+                Button(action: {share(address: "1200 W Harrison St, Chicago, IL 60607")}) {
                     Text("Share").padding()
-                }.buttonStyle(GrowingButton())
+                    
+                }
+                .buttonStyle(GrowingButton())
+                
                 
             }
             Spacer()
         }
     }
+    func share(address: String){
+        let items = [address]
+    //        guard let urlShare = URL (string:"https://developer.apple.com/xcode/swiftui/") else {
+    //            return
+    //        }
+        let activityVC = UIActivityViewController (activityItems: items, applicationActivities: nil)
+            UIApplication.shared.windows.first?.rootViewController?.present(activityVC,animated: true,completion: nil)}
 }
 
 
