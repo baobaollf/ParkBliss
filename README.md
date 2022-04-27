@@ -6,7 +6,7 @@ ParkBliss a parking spot recording application utilizing the NFC technology.
 - If you don't have Xcode already, download and install it here: https://developer.apple.com/xcode/. 
 - An Apple Developer account
 - A machine running macOS.
-- An iPhone running iOS 11 or higher and support NFC. _More info here: https://learn.gototags.com/nfc/software/iphone/compatibility#matrix_
+- An iPhone running iOS 11 or higher and supports NFC. _More info here: https://learn.gototags.com/nfc/software/iphone/compatibility#matrix_
 
 # To Get Started
 
