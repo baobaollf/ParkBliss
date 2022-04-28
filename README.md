@@ -1,6 +1,12 @@
 # About
 ParkBliss a parking spot recording application utilizing the NFC technology. 
 
+# Motivation
+The mental and physical effort taken to remember a parked car’s location can be cumbersome. For example:  taking a picture of the parking spot, remembering the spot in one’s head, writing down the spot, or saving the spot on a mobile device. These actions all require the user to allocate time and energy to achieve. 
+Therefore, we want to identify a way to streamline the experience and come to our solution — Park Bliss.
+
+# Development 
+Park Bliss is a user-centered app. From identifying problems, researching literature, to gathering requirements through interviews, we incorporated a number of user tests into the development process. In the end, we came up with three core functions - record, retrieve, share, and decided on iOS as the platform for our first practice.
 
 # What You Need
 - If you don't have Xcode already, download and install it here: https://developer.apple.com/xcode/. 
